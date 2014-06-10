@@ -1,2 +1,95 @@
-
 @import 'lib/nib/'
+
+global-reset()
+
+width = 650px
+link-color = #159BE8
+
+*
+  box-sizing border-box
+
+body
+  background: #cdd4dc url(images/bg.png)
+  font 14px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif
+  text-align center
+  color #2C2C2C
+
+a
+  color link-color
+  text-decoration none
+
+a:hover
+  background darken(link-color, 10%)
+  color white
+
+h1
+  margin .5em 0 0 0
+  font-size 6em
+  font-weight bold
+  text-transform lowercase
+  text-shadow -1px -1px 1px white
+
+  a
+    color black
+
+  a:hover
+    color black
+    background transparent
+
+h2
+  font-size: 1.8em
+  margin .5em 0
+
+#tagline
+  font-size 1.2em
+  letter-spacing 1px
+
+#toc
+  text-align center
+  font-size 1.4em
+
+  a
+    margin 0 .5em
+
+section
+  margin 40px auto
+  max-width width
+  padding 10px 30px
+  text-align left
+  background white
+
+p
+  margin 1em 0
+
+code
+  font 12px monaco, monospace
+
+p code
+  padding 3px 5px
+  border 1px solid #ddd
+  border-radius 2px
+  color #535353
+
+pre
+  margin 1em 0
+  padding .5em 1em
+  border 1px solid #ddd
+  box-shadow inset 0 0 5px #eee
+  overflow auto
+
+ul
+  margin 1em 0 1em 2em
+
+  ul
+    margin 0 0 0 2em
+
+
+@media screen and (min-width:width)
+
+  section
+    border-radius 3px
+    box-shadow 0 1px 2px 0 rgba(0,0,0,0.4)
+
+  .two-col
+    column-count: 2;
+    column-gap: 1em;
