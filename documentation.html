@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>nib - CSS3 extensions for Stylus</title>
+    <title>nib - Mixins for Stylus</title>
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width">
+    <script src="lib/highlight.min.js"></script>
   </head>
   <body>
     <header>
-      <h1><a href="index.html">Nib</a></h1>
+      <h1><a href="index.html">nib</a></h1>
       <span id="tagline">Mixins for Stylus</span>
     </header>
 
-    <section id="toc">
+    <nav>
       <a href="index.html">About</a>
       <a href="index.html#installation">Installation</a>
       <a href="documentation.html">Documentation</a>
-    </section>
+    </nav>
 
     <section id="docs">
       <h2>Documentation</h2>
@@ -46,13 +47,12 @@
       <h2>Gradient</h2>
       <p>Nib's gradient support is by far the largest feature it provides. Not only is the syntax extremely similar to what you would normally write, it's more forgiving, expands to vendor equivalents, and can even produce a PNG for older browsers with <a href="http://github.com/learnboost/node-canvas">node-canvas</a>.</p>
 
-<pre><code>body {
-  background: linear-gradient(top, white, black);
-}</code></pre>
+<pre><code class="nib">body
+  background linear-gradient(top, white, black)</code></pre>
 
 yields:
 
-<pre><code>body {
+<pre><code class="css">body {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #000));
   background: -webkit-linear-gradient(top, #fff 0%, #000 100%);
   background: -moz-linear-gradient(top, #fff 0%, #000 100%);
@@ -63,18 +63,16 @@ yields:
 
 <p>Any number of color stops may be provided:</p>
 
-<pre><code>body {
-  background: linear-gradient(bottom left, white, red, blue, black);
-}</code></pre>
+<pre><code class="nib">body
+  background linear-gradient(bottom left, white, red, blue, black)</code></pre>
 
 <img class="grad" src="http://f.cl.ly/items/2I0k3D0A2y0n3i443g2W/Screenshot.png" />
 
 <p>Units may be placed before, or after the color:</p>
 
-<pre><code>body {
-  background: linear-gradient(left, 80% red, #000);
-  background: linear-gradient(top, #eee, 90% white, 10% black);
-}</code></pre>
+<pre><code class="nib">body
+  background linear-gradient(left, 80% red, #000)
+  background linear-gradient(top, #eee, 90% white, 10% black)</code></pre>
 
 <img class="grad" src="http://f.cl.ly/items/2B1U3m0t2T1B420I3C3I/Screenshot.png" />
 <img class="grad" src="http://f.cl.ly/items/1T1P1x0n1X3k132o3V0F/Screenshot.png" />
@@ -89,11 +87,10 @@ yields:
 
     <p>The following example will default to (0,0):</p>
 
-    <pre><code>#back-to-top {
-  fixed: bottom right;
-}</code></pre>
+    <pre><code class="nib">#back-to-top
+  fixed bottom right</code></pre>
 yielding:
-    <pre><code>#back-to-top {
+    <pre><code class="css">#back-to-top {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -101,11 +98,10 @@ yielding:
 
     <p>You may also specify the units:</p>
 
-    <pre><code>#back-to-top {
-  fixed: bottom 10px right 5px;
-}</code></pre>
+    <pre><code class="nib">#back-to-top
+  fixed bottom 10px right 5px</code></pre>
 yielding:
-    <pre><code>#back-to-top {
+    <pre><code class="css">#back-to-top {
   position: fixed;
   bottom: 10px;
   right: 5px;
@@ -118,11 +114,11 @@ yielding:
       <p>Clearfixing causes containers to expand to contain floated contents. A simple example is shown <a href="http://learnlayout.com/clearfix.html">here</a>.
       <p>The clearfix mixin takes no arguments and expands to a form that provides extremely robust browser support.</p>
 
-<pre><code>.clearfix
+<pre><code class="nib">.clearfix
   clearfix()</code></pre>
 
 yields:
-<pre><code>.clearfix {
+<pre><code class="css">.clearfix {
   zoom: 1;
 }
 .clearfix:before,
@@ -139,21 +135,18 @@ yields:
       <h2>Border Radius</h2>
       <p>Nib's <code>border-radius</code> supports both the regular syntax as well as augmenting it to make the value more expressive.</p>
 
-<pre><code>button {
-  border-radius: 1px 2px / 3px 4px;
-}
+<pre><code class="nib">button
+  border-radius 1px 2px / 3px 4px
 
-button {
-  border-radius: 5px;
-}
+button
+  border-radius 5px
 
-button {
-  border-radius: bottom 10px;
-}</code></pre>
+button
+  border-radius bottom 10px</code></pre>
 
 yielding:
 
-<pre><code>button {
+<pre><code class="css">button {
   -webkit-border-radius: 1px 2px/3px 4px;
   -moz-border-radius: 1px 2px/3px 4px;
   border-radius: 1px 2px/3px 4px;
@@ -177,17 +170,15 @@ button {
       <h2>Responsive Images</h2>
       <p>The <code>image</code> mixin allows you to define a <code>background-image</code> for both the normal image, and a doubled image for devices with a higher pixel ratio such as retina displays. This works by using a @media query to serve an "@2x" version of the file.</p>
 
-<code><pre>#logo {
-  image: '/images/branding/logo.main.png'
-}
+<pre><code class="nib">#logo
+  image '/images/branding/logo.main.png'
 
-#logo {
-  image: '/images/branding/logo.main.png' 50px 100px
-}</pre></code>
+#logo
+  image '/images/branding/logo.main.png' 50px 100px</code></pre>
 
 yields:
 
-<code><pre>#logo {
+<pre><code class="css">#logo {
   background-image: url("/images/branding/logo.main.png");
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -204,24 +195,23 @@ yields:
     background-image: url("/images/branding/logo.main@2x.png");
     background-size: 50px 100px;
   }
-}</pre></code>
+}</code></pre>
     </section>
 
     <section id="ellipsis">
       <h2>Ellipsis</h2>
       <p>The <code>overflow</code> property is augmented with a "ellipsis" value, expanding to what you see below.</p>
 
-<code><pre>button {
-  overflow: ellipsis;
-}</pre></code>
+<pre><code class="nib">button
+  overflow ellipsis</code></pre>
 
 yielding:
 
-<code><pre>button {
+<pre><code class="css">button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}</pre></code>
+}</code></pre>
     </section>
 
     <section id="reset">
@@ -246,12 +236,12 @@ yielding:
 
       <p>For example:</p>
 
-      <pre><code>*
+      <pre><code class="nib">*
   box-sizing border-box</code></pre>
 
       <p>yields:</p>
 
-      <pre><code>* {
+      <pre><code class="css">* {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -311,7 +301,9 @@ yielding:
       </ul>
     </section>
 
-    <a href="http://github.com/visionmedia/nib"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
 

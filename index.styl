@@ -3,66 +3,107 @@
 global-reset()
 
 width = 650px
-link-color = #159BE8
+link-color = #42B41E
+
+@font-face
+  font-family LibreBaskerville-Italic
+  src url('fonts/LibreBaskerville-Italic')
 
 *
   box-sizing border-box
 
 body
-  background: #cdd4dc url(images/bg.png)
+  background #333 url('images/bg.png')
   font 14px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif
   text-align center
-  color #2C2C2C
+  color #444444
 
 a
   color link-color
   text-decoration none
 
 a:hover
-  background darken(link-color, 10%)
+  background link-color
   color white
 
-h1
-  margin .5em 0 0 0
-  font-size 6em
-  font-weight bold
-  text-transform lowercase
-  text-shadow -1px -1px 1px white
-
-  a
-    color black
-
-  a:hover
-    color black
-    background transparent
-
-h2
-  font-size: 1.8em
-  margin .5em 0
+header
+  margin 1em 0 3em
 
 #tagline
   font-size 1.2em
   letter-spacing 1px
+  color #E7E7E7
 
-#toc
-  text-align center
-  font-size 1.4em
+h1
+  font-size 6em
+  font-style italic
+  font-family LibreBaskerville-Italic
+  text-shadow -2px 2px 0 black
 
   a
-    margin 0 .5em
+    color white
+
+  a:hover
+    color white
+    background transparent
+
+h2
+  color #2B2B2B
+  font-size: 2em
+  margin .2em 0
+
+h3
+  font-size 1.4em
+  margin .5em 0
+  color #575757
 
 section
-  margin 40px auto
-  max-width width
+  margin 20px auto
   padding 10px 30px
+  max-width width
   text-align left
   background white
+
+nav
+  display block
+  margin 0 auto 10px
+  padding 0
+  font-size 1.3em
+  background white
+  overflow hidden
+
+  a
+    display inline-block
+    padding .4em .6em
+    margin 0
+
+  a:first-child
+    border-radius 3px 0 0 3px
+
+  a:last-child
+    border-radius 0 3px 3px 0
 
 p
   margin 1em 0
 
 code
-  font 12px monaco, monospace
+  font-family monaco, monospace
+
+code:before, code:before
+  float right
+  font-size 1.5em
+  font-style italic
+  font-family LibreBaskerville-Italic
+  color #c4c4c4
+
+code.css:before
+  content 'css'
+
+code.nib:before
+  content 'stylus + nib'
+
+code.javascript:before
+  content 'javascript'
 
 p code
   padding 3px 5px
@@ -74,8 +115,10 @@ pre
   margin 1em 0
   padding .5em 1em
   border 1px solid #ddd
-  box-shadow inset 0 0 5px #eee
+  box-shadow inset 0 0 5px #e6e6e6
   overflow auto
+  border-radius 5px
+  background #F7F7F7
 
 ul
   margin 1em 0 1em 2em
@@ -83,13 +126,32 @@ ul
   ul
     margin 0 0 0 2em
 
-
 @media screen and (min-width:width)
 
-  section
+  p
+    font-size 16px
+
+  nav
+    display inline-block
+
+  nav, section
     border-radius 3px
-    box-shadow 0 1px 2px 0 rgba(0,0,0,0.4)
+    // box-shadow 0 1px 2px 0 rgba(0,0,0,0.4)
 
   .two-col
     column-count: 2;
     column-gap: 1em;
+
+// highlight.js custom style
+
+.css .hljs-id, .css .hljs-class, .css .hljs-tag, .css .hljs-pseudo, .javascript .hljs-keyword
+  color #285BCA
+
+.css .hljs-rules
+  color #999999
+
+.css .hljs-attribute, .css .hljs-value
+  color #3C3C3C
+
+.hljs-number, .hljs-string
+  color #9359C9
