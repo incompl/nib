@@ -2,6 +2,7 @@
 
 (function() {
 
+  // util
   var $ = function(selector, context) {
     if (context === undefined) {
       context = document;
@@ -9,6 +10,8 @@
     var nl = context.querySelectorAll(selector);
     return Array.prototype.slice.call(nl);
   };
+
+  // Switch between code source / compiled
 
   var switchers = $('.code-switcher');
 
@@ -40,5 +43,17 @@
     });
     switcher.insertBefore(afterButton, before);
   });
+
+  // Sticky sidebar
+  window.onscroll = function() {
+    var sticky = $('#toc')[0];
+    if (document.body.scrollTop +
+        document.documentElement.scrollTop > 285) {
+      sticky.className = 'stuck';
+    }
+    else {
+      sticky.className = '';
+    }
+  };
 
 }());

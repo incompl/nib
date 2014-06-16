@@ -252,10 +252,10 @@ pre {
   color: #000;
 }
 ul {
-  margin: 1em 0 1em 2em;
+  margin: 1em 0 1em 0;
 }
 ul ul {
-  margin: 0 0 0 2em;
+  margin: 0 0 0 1em;
 }
 @media screen and (min-width: 650px) {
   p {
@@ -276,6 +276,31 @@ ul ul {
     -webkit-column-gap: 1em;
     -moz-column-gap: 1em;
     column-gap: 1em;
+  }
+  #sidebar-right {
+    margin: 0 10px 0 180px;
+  }
+  #sidebar-right section {
+    margin: 20px 0;
+    max-width: none;
+  }
+  #toc {
+    position: absolute;
+    left: 10px;
+    margin: 20px 0 0;
+    padding: 10px;
+  }
+  #toc ul {
+    margin: 0;
+  }
+  #toc ul ul {
+    margin: 0 0 0 1em;
+  }
+  #toc.stuck {
+    position: fixed;
+    margin: 0;
+    top: 10px;
+    left: 10px;
   }
 }
 .css .hljs-id,
