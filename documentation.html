@@ -18,7 +18,7 @@
       <a href="documentation.html">Documentation</a>
     </nav>
 
-    <section id="docs">
+    <section id="toc">
       <h2>Documentation</h2>
 
       <ul>
@@ -47,17 +47,21 @@
       <h2>Gradient</h2>
       <p>Nib's gradient support is by far the largest feature it provides. Not only is the syntax extremely similar to what you would normally write, it's more forgiving, expands to vendor equivalents, and can even produce a PNG for older browsers with <a href="http://github.com/learnboost/node-canvas">node-canvas</a>.</p>
 
-<pre><code class="nib">body
+      <div class="code-switcher">
+<pre class="code-before"><code class="nib">body
   background linear-gradient(top, white, black)</code></pre>
 
-yields:
-
-<pre><code class="css">body {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #000));
+<pre class="code-after"><code class="css">body {
+  background: -webkit-gradient(linear,
+    left top,
+    left bottom,
+    color-stop(0, #fff),
+    color-stop(1, #000));
   background: -webkit-linear-gradient(top, #fff 0%, #000 100%);
   background: -moz-linear-gradient(top, #fff 0%, #000 100%);
-  background: linear-gradient(top, #fff 0%, #000 100%);
-}</code></pre>
+  background: linear-gradient(top, #fff 0%, #000 100%);</code></pre>
+
+      </div>
 
 <img class="grad" src="http://f.cl.ly/items/1q25061X2Q2U0p472L02/Screenshot.png" />
 
@@ -87,25 +91,27 @@ yields:
 
     <p>The following example will default to (0,0):</p>
 
-    <pre><code class="nib">#back-to-top
+    <div class="code-switcher">
+      <pre class="code-before"><code class="nib">#back-to-top
   fixed bottom right</code></pre>
-yielding:
-    <pre><code class="css">#back-to-top {
+      <pre class="code-after"><code class="css">#back-to-top {
   position: fixed;
   bottom: 0;
   right: 0;
 }</code></pre>
+    </div>
 
     <p>You may also specify the units:</p>
 
-    <pre><code class="nib">#back-to-top
+    <div class="code-switcher">
+      <pre class="code-before"><code class="nib">#back-to-top
   fixed bottom 10px right 5px</code></pre>
-yielding:
-    <pre><code class="css">#back-to-top {
+      <pre class="code-after"><code class="css">#back-to-top {
   position: fixed;
   bottom: 10px;
   right: 5px;
 }</code></pre>
+    </div>
 
     </section>
 
@@ -114,11 +120,10 @@ yielding:
       <p>Clearfixing causes containers to expand to contain floated contents. A simple example is shown <a href="http://learnlayout.com/clearfix.html">here</a>.
       <p>The clearfix mixin takes no arguments and expands to a form that provides extremely robust browser support.</p>
 
-<pre><code class="nib">.clearfix
+      <div class="code-switcher">
+<pre class="code-before"><code class="nib">.clearfix
   clearfix()</code></pre>
-
-yields:
-<pre><code class="css">.clearfix {
+<pre class="code-after"><code class="css">.clearfix {
   zoom: 1;
 }
 .clearfix:before,
@@ -129,13 +134,15 @@ yields:
 .clearfix:after {
   clear: both;
 }</code></pre>
+      </div>
     </section>
 
     <section id="border-radius">
       <h2>Border Radius</h2>
       <p>Nib's <code>border-radius</code> supports both the regular syntax as well as augmenting it to make the value more expressive.</p>
 
-<pre><code class="nib">button
+      <div class="code-switcher">
+<pre class="code-before"><code class="nib">button
   border-radius 1px 2px / 3px 4px
 
 button
@@ -144,9 +151,7 @@ button
 button
   border-radius bottom 10px</code></pre>
 
-yielding:
-
-<pre><code class="css">button {
+<pre class="code-after"><code class="css">button {
   -webkit-border-radius: 1px 2px/3px 4px;
   -moz-border-radius: 1px 2px/3px 4px;
   border-radius: 1px 2px/3px 4px;
@@ -164,21 +169,21 @@ button {
   -webkit-border-bottom-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }</code></pre>
+      </div>
     </section>
 
     <section id="responsive">
       <h2>Responsive Images</h2>
       <p>The <code>image</code> mixin allows you to define a <code>background-image</code> for both the normal image, and a doubled image for devices with a higher pixel ratio such as retina displays. This works by using a @media query to serve an "@2x" version of the file.</p>
 
-<pre><code class="nib">#logo
+      <div class="code-switcher">
+<pre class="code-before"><code class="nib">#logo
   image '/images/branding/logo.main.png'
 
 #logo
   image '/images/branding/logo.main.png' 50px 100px</code></pre>
 
-yields:
-
-<pre><code class="css">#logo {
+<pre class="code-after"><code class="css">#logo {
   background-image: url("/images/branding/logo.main.png");
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -196,22 +201,22 @@ yields:
     background-size: 50px 100px;
   }
 }</code></pre>
+      </div>
     </section>
 
     <section id="ellipsis">
       <h2>Ellipsis</h2>
       <p>The <code>overflow</code> property is augmented with a "ellipsis" value, expanding to what you see below.</p>
 
-<pre><code class="nib">button
+      <div class="code-switcher">
+<pre class="code-before"><code class="nib">button
   overflow ellipsis</code></pre>
-
-yielding:
-
-<pre><code class="css">button {
+<pre class="code-after"><code class="css">button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }</code></pre>
+      </div>
     </section>
 
     <section id="reset">
@@ -236,16 +241,15 @@ yielding:
 
       <p>For example:</p>
 
-      <pre><code class="nib">*
+      <div class="code-switcher">
+        <pre class="code-before"><code class="nib">*
   box-sizing border-box</code></pre>
-
-      <p>yields:</p>
-
-      <pre><code class="css">* {
+        <pre class="code-after"><code class="css">* {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }</code></pre>
+      </div>
 
      <p>Here is the full list of properties for which Nib provides transparent mixins:</p>
 
@@ -304,6 +308,7 @@ yielding:
     <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src="app.js"></script>
   </body>
 </html>
 

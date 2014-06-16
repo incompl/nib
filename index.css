@@ -175,7 +175,7 @@ p {
   margin: 1em 0;
 }
 code {
-  font-family: monaco, monospace;
+  font-family: Monaco, "Lucida Console", monospace;
 }
 code:before {
   float: right;
@@ -201,15 +201,55 @@ p code {
   color: #535353;
 }
 pre {
-  margin: 1em 0;
-  padding: 0.5em 1em;
-  border: 1px solid #ddd;
-  -webkit-box-shadow: inset 0 0 5px #e6e6e6;
-  box-shadow: inset 0 0 5px #e6e6e6;
-  overflow: auto;
+  margin: 0 0 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #ebebeb;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  background: #f7f7f7;
+  -webkit-box-shadow: inset 0 0 5px #ccc;
+  box-shadow: inset 0 0 5px #ccc;
+  overflow: auto;
+}
+.code-switcher {
+  background: #ebebeb;
+  overflow: auto;
+  margin: 1em 0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px #ccc;
+  box-shadow: inset 0 0 5px #ccc;
+}
+.code-switcher code:before {
+  content: '';
+}
+.code-switcher pre {
+  background: #fff;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0 5px 5px 5px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0 0.5rem 0.5rem;
+}
+.code-switcher .code-switcher-button {
+  display: inline-block;
+  font-size: 1.4em;
+  padding: 0 0.4em;
+  margin: 0.5rem 0 0 0.5rem;
+  border: none;
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  color: #42b41e;
+  font-family: LibreBaskerville-Italic;
+  font-style: italic;
+}
+.code-switcher .code-switcher-button:hover:not(.selected) {
+  background: #42b41e;
+  color: #fff;
+}
+.code-switcher .selected {
+  background: #fff;
+  color: #000;
 }
 ul {
   margin: 1em 0 1em 2em;

@@ -4,6 +4,7 @@ global-reset()
 
 width = 650px
 link-color = #42B41E
+code-bg = #ebebeb
 
 @font-face
   font-family LibreBaskerville-Italic
@@ -87,9 +88,9 @@ p
   margin 1em 0
 
 code
-  font-family monaco, monospace
+  font-family Monaco, "Lucida Console", monospace
 
-code:before, code:before
+code:before
   float right
   font-size 1.5em
   font-style italic
@@ -112,13 +113,48 @@ p code
   color #535353
 
 pre
-  margin 1em 0
-  padding .5em 1em
-  border 1px solid #ddd
-  box-shadow inset 0 0 5px #e6e6e6
-  overflow auto
+  margin 0 0 .5rem
+  padding .5rem 1rem
+  background code-bg
   border-radius 5px
-  background #F7F7F7
+  box-shadow inset 0 0 5px #ccc
+  overflow auto
+
+.code-switcher
+  background code-bg
+  overflow auto
+  margin 1em 0
+  border-radius 5px
+  box-shadow inset 0 0 5px #ccc
+
+  code:before
+    content ''
+
+  pre
+    background white
+    border-radius 0 5px 5px 5px
+    box-shadow none
+    margin 0 .5rem .5rem
+
+  .code-switcher-button
+    display inline-block
+    font-size 1.4em
+    padding 0 .4em
+    margin .5rem 0 0 .5rem
+    border none
+    border-radius 5px 5px 0 0
+    cursor pointer
+    color link-color
+    font-family LibreBaskerville-Italic
+    font-style italic
+
+  .code-switcher-button:hover:not(.selected)
+    background link-color
+    color white
+
+  .selected
+    background white
+    color black
 
 ul
   margin 1em 0 1em 2em
@@ -136,7 +172,6 @@ ul
 
   nav, section
     border-radius 3px
-    // box-shadow 0 1px 2px 0 rgba(0,0,0,0.4)
 
   .two-col
     column-count: 2;

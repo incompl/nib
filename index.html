@@ -21,14 +21,14 @@
     <section id="about">
       <h2>What is it?</h2>
       <p>Nib is a powerful library for the <a href="http://learnboost.github.com/stylus">Stylus CSS language</a> that provides robust cross-browser CSS3 mixins to make your life as a designer easier.</p>
-      <p>For example, writing this:</p>
+      <p>For example, here is nib's easy gradient mixin:</p>
 
-      <pre><code class="nib">body
+      <div class="code-switcher">
+
+        <pre class="code-before"><code class="nib">body
   background linear-gradient(top, white, black)</code></pre>
 
-      <p>Compiles to this:</p>
-
-      <pre><code class="css">body {
+        <pre class="code-after"><code class="css">body {
   background: -webkit-gradient(linear,
     left top,
     left bottom,
@@ -38,6 +38,8 @@
   background: -moz-linear-gradient(top, #fff 0%, #000 100%);
   background: linear-gradient(top, #fff 0%, #000 100%);
 }</code></pre>
+
+      </div>
     </section>
 
     <section id="installation">
@@ -93,6 +95,7 @@ app.listen(3000);</code></pre>
     <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src="app.js"></script>
   </body>
 </html>
 
