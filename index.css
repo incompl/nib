@@ -303,6 +303,11 @@ ul ul {
     left: 10px;
   }
 }
+.shadow-stroke {
+  font-size: 2em;
+  color: #fff;
+  text-shadow: -1px -1px 0 #f00, 1px -1px 0 #f00, -1px 1px 0 #f00, 1px 1px 0 #f00;
+}
 .css .hljs-id,
 .css .hljs-class,
 .css .hljs-tag,

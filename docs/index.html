@@ -30,6 +30,9 @@
             <li><a href="#responsive">Responsive Images</a></li>
             <li><a href="#ellipsis">Ellipsis</a></li>
             <li><a href="#reset">Reset</a></li>
+            <li><a href="#shadow-stroke">Shadow Stroke</a></li>
+            <li><a href="#border">Border</a></li>
+            <li><a href="#size">Size</a></li>
           </ul>
         </li>
         <li>
@@ -235,6 +238,54 @@ button {
       </ul>
     </section>
 
+    <section id="border">
+      <h2>Border</h2>
+      <p>This shorthand lets you create a border by just specifying a color, with defaults for width and style.</p>
+
+      <div class="code-switcher">
+        <pre class="code-before"><code class="nib">.foo
+  border red</code></pre>
+        <pre class="code-after"><code class="css">.foo {
+  border: 1px solid red;
+}</code></pre>
+      </div>
+
+    </section>
+
+    <section id="shadow-stroke">
+      <h2>Shadow Stroke</h2>
+      <p>Creates a text outline using text-shadow.</p>
+
+      <div class="code-switcher">
+        <pre class="code-before"><code class="nib">.foo
+  shadow-stroke(red)</code></pre>
+        <pre class="code-after"><code class="css">.foo {
+  text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+}</code></pre>
+      </div>
+
+      <p>It looks like this!</p>
+
+      <div class="shadow-stroke">
+        This is white text with a red outline!
+      </div>
+    </section>
+
+    <section id="size">
+      <h2>Size</h2>
+      <p>This shorthand lets you set width and height in one go.</p>
+
+      <div class="code-switcher">
+        <pre class="code-before"><code class="nib">.foo
+  size 5em 10em</code></pre>
+        <pre class="code-after"><code class="css">.foo {
+  width: 5em;
+  height: 10em;
+}</code></pre>
+      </div>
+
+    </section>
+
     <section id="transparent-mixins">
       <h2>Transparent Mixins</h2>
       <p>These mixins expand vendor prefixes but do not modify the behavior of the property.</p>
@@ -255,6 +306,7 @@ button {
 
       <ul class="two-col">
         <li>box-shadow</li>
+        <li>radial-gradient</li>
         <li>user-select</li>
         <li>column-count</li>
         <li>column-gap</li>
