@@ -45,14 +45,17 @@
   });
 
   // Sticky sidebar
-  window.onscroll = function() {
-    var sticky = $('#toc')[0];
+  var sticky = $('#toc')[0];
+  var container = $('#container')[0];
+  window.onscroll = window.onresize = function() {
     if (document.body.scrollTop +
         document.documentElement.scrollTop > 285) {
       sticky.className = 'stuck';
+      sticky.style.left = (container.offsetLeft + 10) + 'px';
     }
     else {
       sticky.className = '';
+      sticky.style.left = '10px';
     }
   };
 

@@ -177,30 +177,34 @@ ul
     column-count: 2;
     column-gap: 1em;
 
-  #sidebar-right
-    margin 0 10px 0 180px
+  #container
+    max-width 900px
+    margin 0 auto
+    position relative
 
-    section
-      margin 20px 0
-      max-width none
+    #sidebar-right
+      margin 0 10px 0 180px
 
-  #toc
-    position absolute
-    left 10px
-    margin 20px 0 0
-    padding 10px
+      section
+        margin 20px 0
+        max-width none
 
-    ul
+    #toc
+      position absolute
+      left 10px
       margin 0
+      padding 10px
 
       ul
-        margin 0 0 0 1em
+        margin 0
 
-  #toc.stuck
-    position fixed
-    margin 0
-    top 10px
-    left 10px
+        ul
+          margin 0 0 0 1em
+
+    #toc.stuck
+      position fixed
+      margin 0
+      top 10px
 
 // examples of things
 

@@ -277,30 +277,34 @@ ul ul {
     -moz-column-gap: 1em;
     column-gap: 1em;
   }
-  #sidebar-right {
+  #container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  #container #sidebar-right {
     margin: 0 10px 0 180px;
   }
-  #sidebar-right section {
+  #container #sidebar-right section {
     margin: 20px 0;
     max-width: none;
   }
-  #toc {
+  #container #toc {
     position: absolute;
     left: 10px;
-    margin: 20px 0 0;
+    margin: 0;
     padding: 10px;
   }
-  #toc ul {
+  #container #toc ul {
     margin: 0;
   }
-  #toc ul ul {
+  #container #toc ul ul {
     margin: 0 0 0 1em;
   }
-  #toc.stuck {
+  #container #toc.stuck {
     position: fixed;
     margin: 0;
     top: 10px;
-    left: 10px;
   }
 }
 .shadow-stroke {
