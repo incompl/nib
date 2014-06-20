@@ -21,7 +21,7 @@
     after.style.display = 'none';
 
     var beforeButton = document.createElement('div');
-    beforeButton.innerText = 'Stylus + Nib';
+    beforeButton.textContent = 'Stylus + Nib';
     beforeButton.classList.add('code-switcher-button');
     beforeButton.classList.add('selected');
     beforeButton.addEventListener('click', function(e) {
@@ -33,7 +33,7 @@
     switcher.insertBefore(beforeButton, before);
 
     var afterButton = document.createElement('div');
-    afterButton.innerText = 'Compiled CSS';
+    afterButton.textContent = 'Compiled CSS';
     afterButton.classList.add('code-switcher-button');
     afterButton.addEventListener('click', function(e) {
       before.style.display = 'none';
@@ -48,6 +48,9 @@
   var sticky = $('#toc')[0];
   var container = $('#container')[0];
   window.onscroll = window.onresize = function() {
+    if (!sticky) {
+      return;
+    }
     if (document.body.scrollTop +
         document.documentElement.scrollTop > 285) {
       sticky.className = 'stuck';
