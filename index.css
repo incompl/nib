@@ -113,7 +113,7 @@ a:hover {
   color: #fff;
 }
 header {
-  margin: 1em 0 3em;
+  margin: 0 0 2.8em;
 }
 #tagline {
   font-size: 1.2em;
@@ -121,6 +121,7 @@ header {
   color: #e7e7e7;
 }
 h1 {
+  margin: 0.18em 0 -0.2em;
   font-size: 6em;
   font-style: italic;
   font-family: LibreBaskerville-Italic;
